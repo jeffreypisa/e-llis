@@ -1,0 +1,44 @@
+.mod-cta {
+	background-size: cover;
+	padding: 60px 0;
+	background-position: center center;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		left: 0; 
+		right: 0;
+		top: 0; 
+		bottom: 0;
+		background: rgba(0,0,0,.5);
+		z-index: -1;
+	}
+	&.lime:after {
+		background: rgba($lime,.7);
+	}
+	&.grey:after {
+		background: rgba($grey,.5);
+	}
+	&.iceblue:after {
+		background: rgba($iceblue,.7);
+	}
+	&.darkblue:after {
+		background: rgba($darkblue,.5);
+	}
+	.bg {
+		position: absolute;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+		z-index: -2;
+		background-size: cover;
+		background-position: center center;
+	}
+	h2, p {
+		color: #fff;
+	}
+	.content {
+		z-index: 2;
+	}
+}

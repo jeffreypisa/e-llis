@@ -1,0 +1,80 @@
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+.btn, .field-wrap input[type=button] {
+  height: 48px;
+  line-height: 48px;
+  border-radius: 100px;
+  padding: 0 30px;
+  letter-spacing: 1px;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background: $orange;
+    opacity: 1;
+    border-color: $orange;
+  }
+  &[href]:hover {
+    box-shadow: 0 10px 30px 0 rgba(17,17,37,0.60);
+    background: lighten($orange, 10%);
+  }
+}
+
+.btn-outline-primary {
+  border-color: $darkblue;
+  &:hover {
+    color: #fff;
+    background: $darkblue;
+    opacity: 1;
+    border-color: $darkblue;
+  }
+}
+
+.btn-outline-light {
+  border-color: $orange;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    background: lighten($orange, 10%);
+    border-color: lighten($orange, 10%);
+    opacity: 1;
+  }
+}
+
+.btn-primary, .field-wrap input[type=button] {
+  border: 0;
+  background: $orange;
+  border-color: $orange;
+  color: #fff;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: #fff;
+    background: lighten($orange, 10%);
+    border-color: lighten($orange, 10%);
+  }
+  &:focus, &:active, &:target, &:not(:disabled):not(.disabled):active {
+    color: #fff;
+    background: $orange;
+    border-color: $orange;
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+
+}

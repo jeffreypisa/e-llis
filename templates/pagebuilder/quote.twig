@@ -1,0 +1,22 @@
+<section class="mod-quote {{ item.kleur }}">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="quote">
+          <div data-aos="fade-up" data-aos-duration="800" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine">
+            {% if item.quote %} 
+              {{ item.quote }}
+            {% endif %}
+            <div class="clearfix"></div>
+            {% if item.naam %} 
+              <strong>– {{ item.naam }},</strong>
+            {% endif %}
+            {% if item.functie %}
+              {{ item.functie }}
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>     
+</section>

@@ -1,0 +1,39 @@
+<section class="section-alt">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 text-center">
+        {% if item.titel %}<h2> {{ item.titel }} </h2>{% endif %}
+        {% if item.titel %}<div class="lead">{{ item.tekst }}</div>{% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mod-blocklinks">
+  <div class="container">
+	  <div class="blocklinks" style="margin-top: 0;">
+	  	<div class="row">
+		    {% set delay = 0 %}
+		    {% for blocklink in cases %}
+		    	<div class="col-md-6 col-lg-4">
+			      <a href="{{ blocklink.link }}" class="item cases" data-aos="fade-up" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine" data-aos-duration="600">
+			        <div class="card">
+			          {% if blocklink.thumbnail %}
+			            <img class="card-img-top" style="background-image: url({{ Image(blocklink.thumbnail)|resize(800) }})">
+			          {% endif %}
+			          <div class="card-body" style="background: #E6E9EC;">
+			          	<div class="js-matchheight" style="color: #6E7C7C">
+				            {% if blocklink.title %}<h3 style="color: #00407A">{{ blocklink.title }}</h3>{% endif %}
+				            {{ blocklink.content|truncate(20) }}
+			          	</div>
+				          	<div class="btn btn-primary btn-block">READ MORE</div>
+			          </div>
+			        </div>
+			      </a>
+			    </div>
+		      {% set delay = delay + 100 %}
+		    {% endfor %}
+		  </div>
+	  </div>
+	</div>
+  <div class="clearfix"></div>
+</section>

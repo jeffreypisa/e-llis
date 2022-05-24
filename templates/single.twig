@@ -1,0 +1,44 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper {{ post.dekleur }}">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="article-body">
+			  {% include 'pagebuilder.twig' %}
+			  <section class="mod-blocklinks section-alt {% if item.uitgebreide_weergave %} nopaddingbottom {% endif %}">
+			  	<div class="container">
+			  		<div class="row">
+			  			<div class="col-md-10 offset-md-1">
+								<h3> Find out more about our other business units </h3>
+			  			</div>
+			  		</div>
+			  	</div>
+		  		<div class="blockcontainer">
+					  <div class="blocklinks js-slick">
+					    {% set delay = 0 %}
+					    {% for blocklink in options.blocklinks %}
+					    	{% if post.link != blocklink.btn_link %}
+						      <a href="{{ blocklink.btn_link }}" class="item" data-aos="fade-up" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine" data-aos-duration="600">
+						        <div class="card">
+						          {% if blocklink.afbeelding %}
+						            <img class="card-img-top" style="background-image: url({{ blocklink.afbeelding }})">
+						          {% endif %}
+						          <div class="card-body js-matchheight" style="background: {{ blocklink.kleur }}">
+						            {% if blocklink.titel %}<h3>{{ blocklink.titel }}</h3>{% endif %}
+						            <p>{{ blocklink.tekst }}</p>
+							          {% if blocklink.btn %}
+							          	<div class="btn btn-primary btn-block">{{ blocklink.btn_label }}</div>
+							          {% endif %}
+						          </div>
+						        </div>
+						      </a>
+						      {% set delay = delay + 100 %}
+						    {% endif %}
+					    {% endfor %}
+					  </div>
+				  </div>
+				</div>
+			</div>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

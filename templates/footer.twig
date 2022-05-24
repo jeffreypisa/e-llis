@@ -1,0 +1,29 @@
+<div id="footer" class="section footer fp-auto-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-3">
+        <h2> Contact us </h2>
+        <div class="row">
+          <div class="col-md-6">
+            {{ options.footer_contact }}
+          </div>
+          <div class="col-md-6">
+            {% if options.footer_tel %}
+              <a href="tel:{{ options.footer_tel }}" class="btn btn-outline-light btn-block"> TEL {{ options.footer_tel }} </a>
+            {% endif %}
+            {% if options.footer_email %}
+              <a href="mailto:{{ options.footer_email }}" class="btn btn-primary btn-block"> EMAIL US FOR INFO </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid"> 
+    <div class="subfooter">
+      <span class="float-left"> {{ "now"|date("Y") }} Copyright e-LLIS BV</span>
+      <span class="float-left"> {% include "footermenu.twig" with {'footermenu': footermenu.get_items} %} </span>
+      <span class="float-left"> site by <a class="orange" href="http://www.stoerebinken.nl"> Stoere Binken </a></span>
+    </div>
+  </div>
+</div>

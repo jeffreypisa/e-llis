@@ -1,0 +1,68 @@
+<section class="section-alt nopadding">
+	<div class="prevnext">
+		<div class="row no-gutters">
+			<div class="col-md">
+				{% if post.prev %}
+					<a href="{{ post.prev.link }}" data-mh class="noline prev"> 
+						<div class="row">
+							<div class="col-auto d-flex align-items-center">
+								{% include 'assets/images/arrow.svg.twig' %}
+							</div>
+							<div class="col">
+								<span>
+		      				{{ post.prev.title }}
+								</span>
+							</div>
+						</div>
+					</a>
+				{% else %}
+					{% set last = firstlast|last %}
+					{% if last %}
+						<a href="{{ last.link }}" data-mh class="noline prev"> 
+							<div class="row">
+								<div class="col-auto d-flex align-items-center">
+									{% include 'assets/images/arrow.svg.twig' %}
+								</div>
+								<div class="col">
+									{{ last.title }}
+								</div>
+							</div>
+						</a>
+					{% endif %}
+				{% endif %}
+			</div>
+			<div class="col-md">
+				{% if post.next %}
+					<a href="{{ post.next.link }}" data-mh class="noline next text-right"> 
+						<div class="row">
+							<div class="col">
+								<span>
+									{{ post.next.title }}
+								</span>
+							</div>
+							<div class="col-auto d-flex align-items-center">
+								{% include 'assets/images/arrow.svg.twig' %}
+							</div>
+						</div>
+					</a>
+				{% else %}
+					{% set first = firstlast|first %}
+					{% if first %}
+						<a href="{{ first.link }}" data-mh class="noline next text-right"> 
+							<div class="row">
+								<div class="col">
+									<span>
+										{{ first.title }}
+									</span>
+								</div>
+								<div class="col-auto d-flex align-items-center">
+									{% include 'assets/images/arrow.svg.twig' %}
+								</div>
+							</div>
+						</a>
+					{% endif %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

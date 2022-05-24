@@ -1,0 +1,23 @@
+section {
+  padding: 40px 0;
+  position: relative;
+  overflow: hidden;
+  &.section-alt {
+    background: $lightergrey;
+  }
+  &.nopadding {
+	  padding: 0 !important;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  section {
+    padding: 70px 0;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  section {
+    padding: 90px 0;
+  }
+}

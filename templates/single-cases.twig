@@ -1,0 +1,33 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper {{ post.dekleur }}">
+		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+			<div class="article-body">
+				<section class="mod-pageheader d-flex align-items-center donkerder ">
+					<div class="bg" style="background-image: url({{ Image(post.thumbnail).src }});"> </div>
+				  <div class="content w-100">
+				    <div class="container">
+				      <div class="row">
+				        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				          <h1>  {{ post.title }}  </h1>
+				        </div>
+				      </div>
+				    </div>
+				  </div>
+				</section>
+				<section class="mod-content">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-10 offset-md-1">
+								{{ post.content }}
+							</div>
+						</div>
+					</div>
+				</section>
+			  {% include 'pagebuilder.twig' %}
+			  {% include 'partials/nextprev.twig' %}
+			</div>
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

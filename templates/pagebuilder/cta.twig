@@ -1,0 +1,22 @@
+<section class="{% if item.section_alt %} section-alt {% endif %}" style="padding-top: 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1">
+				<div class="mod-cta {{ item.kleur }}">	
+					<div class="bg" style="background-image: url({{ item.afbeelding }})"></div>				
+					<div class="row">
+						<div class="col-md-10 offset-md-1">
+							<div class="content">
+				      	<h2> {{ item.titel }} </h2>
+				        {{ item.content }}
+				        <div class="text-center" style="padding-top: 15px">
+				        	<a href="{{ item.btn_link }}" class="btn btn-primary"> {{ item.btn_label }} </a>
+				        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+  </div>     
+</section>

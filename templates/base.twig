@@ -1,0 +1,58 @@
+{% block html_head_container %}
+  {% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+  <body class="{{body_class}}" data-template="base.twig">
+    {% include 'mobilemenu.twig' %}
+		<header class="header d-flex align-items-center {% if fn('is_front_page') %} {% else %} on{% endif %}" >
+			{% block header %}
+			  <div class="container-fluid">
+			    <a id="mobilemenubtn" class="btn-menu js-menu d-block d-lg-none float-left">
+      	    <div class="circles">
+        		  <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+      	    </div>
+          </a>
+			    <div class="row">
+			      <div class="col d-flex align-items-center">
+      				<div class="logo" role="banner">
+      					<a class="logo-link" href="{{site.url}}" rel="home">
+      					  <img src="{{theme.link}}/assets/images/e-llis_logo.svg" alt="logo" width="174" height="65">
+      					</a>
+      				</div>
+            </div>
+            <div class="col-auto d-flex align-items-center">
+              <div class="d-none d-lg-block float-left">
+                {% include "menu.twig" with {'menu': menu.get_items} %}
+              </div>
+            </div>
+          </div>
+        </div>
+  		{% endblock %}
+		</header>
+
+		<div id="content" role="main" class="content-wrapper">
+			{% block content %}
+				Sorry, no content
+			{% endblock %}
+		</div>
+		{% block footer %}
+      {% include 'footer.twig' %}
+    {% endblock %}
+    <script src="{{theme.link}}/bower_components/aos/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: 'ease-out-sine',
+        offset: 0,
+        duration: 500,
+        delay: 0
+      });
+    </script>
+	</body>
+  {{ function('wp_footer') }}
+</html>

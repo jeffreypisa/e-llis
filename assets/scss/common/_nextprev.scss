@@ -1,0 +1,64 @@
+.content-wrapper .prevnext {
+	a:not(.btn) {
+		display: block;
+		padding: 30px;
+		transition: 0.2s ease-in-out;
+		color: #6E7C7C;		
+		span {
+			display: block;
+			padding-top: 3px;
+		}
+		svg {
+			#CASE-DETAIL-DESK {
+				fill: #6E7C7C;
+				transition: 0.2s ease-in-out;
+			}
+		}
+		&:hover {
+			background: $orange;
+			color: #fff;
+			svg {
+				#CASE-DETAIL-DESK {
+					fill: #fff;
+				}
+			}
+		}
+	}
+	.prev svg {
+		transform: rotate(180deg);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.content-wrapper .prevnext {
+		a:not(.btn) {
+			padding: 60px;
+			&:hover {
+				background: $orange;
+				color: #fff;
+				svg {
+					#CASE-DETAIL-DESK {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.content-wrapper .prevnext {
+		a:not(.btn) {
+			padding: 100px;
+			&:hover {
+				background: $orange;
+				color: #fff;
+				svg {
+					#CASE-DETAIL-DESK {
+						fill: #fff;
+					}
+				}
+			}
+		}
+	}
+}

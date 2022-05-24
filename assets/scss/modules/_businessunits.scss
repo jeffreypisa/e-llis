@@ -1,0 +1,81 @@
+.single .mod-businessunits {
+	.businessunits {
+		.unit {
+			h5 {
+				.oranje {
+					color: $darkblue;
+				}
+			}
+		}
+	}
+}
+.mod-businessunits + .mod-content:not(.section-alt) {
+	padding-top: 0
+}
+.mod-businessunits {
+  .businessunits {
+    .unit {
+      position: relative;
+      padding-left: 30px;
+      padding-bottom: 30px;
+      &:after {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        content: '';
+        bottom: -6px;
+        width: 1px;
+        background: $blue;
+      }
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+      a {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      .stip {
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        border-radius: 100px;
+        background: $blue;
+      }
+      h5 {
+        margin: 0;
+        .oranje {
+          color: $orange;
+          font-weight: 600;
+        }
+        .blauw {
+          color: $darkblue;
+        }
+      }
+    }
+  }
+  &.lime .unit {
+		&:after, .stip {
+			background: $lime;
+		}
+	}
+	&.iceblue .unit {
+		&:after, .stip {
+			background: $iceblue;
+		}
+	}
+	&.gray .unit {
+		&:after, .stip {
+			background: $gray;
+		}
+	}
+	&.darkblue .unit {
+		&:after, .stip {
+			background: $darkblue;
+		}
+	}
+}

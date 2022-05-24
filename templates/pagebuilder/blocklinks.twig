@@ -1,0 +1,71 @@
+<section class="mod-blocklinks {% if item.section_alt %} section-alt {% endif %} {% if item.uitgebreide_weergave %} nopaddingbottom {% endif %}">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 offset-md-1">
+        {% if item.titel %}<h2> {{ item.titel }} </h2>{% endif %}
+        <div class="lead">{{ item.content }}</div>
+      </div>
+    </div>
+  </div>
+  {% if item.uitgebreide_weergave %}
+  	{% for item in options.blocklinks %}
+		  <div class="mod-contentblok
+			{{ item.locatie_tekstvlak }}"  data-aos="fade-up" data-aos-duration="800">
+		  	<div class="card">
+		      <div class="row no-gutters">
+		        <div class="col-md-6 d-none d-md-flex">
+			        {% if item.afbeelding %}
+								<div class="card-img-top h-100" style="background-image: url({{item.afbeelding|resize(800)}})"> </div>
+							{% endif %}
+		        </div>
+		        <div class="col-md-6 d-md-flex align-items-center {% if loop.index is odd %} order-first {% endif %}" style="background-color: {{ item.kleur }}">
+		        	<div class="contentvlak" >
+		        		<div class="container">
+				          {% if item.titel %}
+				            <h2 class="{{ item.locatie_tekstvlak }}">{{ item.titel }}</h2>
+				          {% endif %}
+			        		{% if item.subtitel %}
+			        			<h4 class="subtitel"> {{ item.subtitel }} </h4>
+			        		{% endif %}
+				          {% if item.tekst %}
+				            {{ item.tekst }}
+				          {% endif %}
+				          {% if item.btn %}
+				          	<br><br>
+				            <a href="{{ item.btn_link }}" class="btn btn-primary"> {{ item.btn_label }} </a>
+				          {% endif %}
+			          </div>
+		        	</div>
+		        </div>
+		      </div>
+		    </div>
+			</div>
+		{% endfor %}
+  {% else %}
+	  <div class="blockcontainer">
+		  <div class="blocklinks js-slick">
+		    {% set delay = 0 %}
+		    {% for blocklink in options.blocklinks %}
+		      <a href="{{ blocklink.btn_link }}" class="item" data-aos="fade-up" data-aos-delay="{{delay}}" data-aos-easing="ease-in-sine" data-aos-duration="600">
+		        <div class="card">
+		          {% if blocklink.afbeelding %}
+		            <img class="card-img-top" style="background-image: url({{ blocklink.afbeelding|resize(800) }})">
+		          {% endif %}
+		          <div class="card-body" style="background: {{ blocklink.kleur }}">
+		          	<div class="js-matchheight">
+			            {% if blocklink.titel %}<h3>{{ blocklink.titel }}</h3>{% endif %}
+			            <p>{{ blocklink.tekst }}</p>
+		          	</div>
+			          {% if blocklink.btn %}
+			          	<div class="btn btn-primary btn-block">{{ blocklink.btn_label }}</div>
+			          {% endif %}
+		          </div>
+		        </div>
+		      </a>
+		      {% set delay = delay + 100 %}
+		    {% endfor %}
+		  </div>
+		</div>
+	{% endif %}
+  <div class="clearfix"></div>
+</section>

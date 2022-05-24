@@ -1,0 +1,50 @@
+.mod-quote.lime {
+	background: $lime;
+}
+
+.mod-quote.iceblue {
+	background: $iceblue;
+}
+
+.mod-quote.gray {
+	background: $gray;
+}
+
+.mod-quote.darkblue {
+	background: $darkblue;
+}
+
+.mod-quote {
+  background: $blue;
+  color: #fff;
+  .quote {
+    padding-left: 20px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 5px;
+      left: 0;
+      bottom: 5px;
+      width: 2px;
+      background: #fff;
+      opacity: 0.5;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .mod-quote {
+    .quote {
+      padding-left: 25px;
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .mod-quote {
+    .quote {
+      padding-left: 30px;
+    }
+  }
+}

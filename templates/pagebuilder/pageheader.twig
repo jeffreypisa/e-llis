@@ -1,0 +1,26 @@
+<section class="mod-pageheader d-flex align-items-center {% if item.kleur != 'uit' %}{{ item.kleur }}{% endif %} {% if item.xl %} xl {% endif %}">
+	<div class="bg" style="background-image: url({{ item.afbeelding }});" data-parallax='{"y" : 230}'> </div>
+  {% if item.particles %}<div id="particles-js"></div>{% endif %}
+  <div class="content w-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <h1> {% if item.tekst %} {{ item.tekst }} {% else %} {{ post.title }} {% endif %} </h1>
+          {% if item.btn_show %}
+            <a href="#" class="btn btn-outline-light js-scrolltonextsection"> {{ item.btn_label }} </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if item.xl %}
+    <a class="scrolldown js-scrolltonextsection"> 
+      <span class="bol b1"> </span>
+      <span class="bol b2"> </span>
+      <span class="pijl">
+        <span class="p1"> </span>
+        <span class="p2"> </span>
+      </span>
+    </a>
+  {% endif %}
+</section>
