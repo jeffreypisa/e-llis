@@ -40,5 +40,15 @@ $args = array(
 );
 
 $context['cases'] = Timber::get_posts($args);
+  
+  $args = array(
+    'post_type'			  => 'jobs',
+    'posts_per_page'  => -1,
+  );
+  
+  $context['jobs'] = Timber::get_posts($args);
+  
+$terms = \Timber::get_terms(array('taxonomy' => 'jobs_category', 'hide_empty' => true, 'parent' => 0));
+$context['categories'] = $terms;
 
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

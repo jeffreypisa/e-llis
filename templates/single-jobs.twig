@@ -1,0 +1,66 @@
+{% extends "base.twig" %}
+
+{% block content %}
+<div class="content-wrapper {{ post.dekleur }}">
+	<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+		<section class="mod-pageheader d-flex align-items-center">
+			<div class="bg" style="background-image: url({{ Image(post.thumbnail).src }});" data-parallax='{"y" : 230}'> </div>
+			<div class="content w-100">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 text-white">
+							<h1> {{ post.title }}</h1>
+							<h3> {{ post.subtitel }}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-7 offset-lg-1">
+						<h2 class="h1 text-blue mb-4"> {{ post.title }}</h2>
+						{{ post.content }}
+					</div>
+					<div class="col-lg-3">
+						<a href="#" class="btn btn-primary btn-block mb-4 d-none d-lg-block">APPLY FOR THIS JOB </a>
+						<div class="card bg-white card-border">
+							<div class="card-body text-center">
+								<h5 class="font-weight-bold mb-2">Deel deze vacature</h5>
+								<div class="clearfix"></div>
+								<a href="https://www.linkedin.com/shareArticle?url={{ post.link }}&title={{ post.title }}" class="social h5 p-1 m-0">
+									<i class="fab fa-linkedin"></i>
+								</a>
+								<a href="https://twitter.com/share?url={{ post.link }}&text={{ post.title }}" class="social h5 p-1 m-0">
+									<i class="fab fa-twitter"></i>
+								</a>
+								<a href="https://www.facebook.com/sharer.php?u={{ post.link }}" class="social h5 p-1 m-0">
+									<i class="fab fa-facebook"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				{% if options.jobs_cta_titel or options.jobs_cta_tekst or options.jobs_cta_link %}
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<br><br>
+							<div class="card bg-lightergrey mopadding">
+								<div class="card-body">
+									<h2 class="mb-3"> {{ options.jobs_cta_titel }}</h2>
+									<span class="mb-4">{{ options.jobs_cta_tekst }}</span>
+									{% if options.jobs_cta_link %}
+										<a href="{{ options.jobs_cta_link.url }}" target="{{ options.jobs_cta_link.target }}" class="btn btn-primary">{{ options.jobs_cta_link.title }}</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</section>
+	</article>
+</div><!-- /content-wrapper -->
+{% endblock %}

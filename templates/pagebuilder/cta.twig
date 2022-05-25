@@ -1,22 +1,42 @@
 <section class="{% if item.section_alt %} section-alt {% endif %}" style="padding-top: 0;">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1">
-				<div class="mod-cta {{ item.kleur }}">	
-					<div class="bg" style="background-image: url({{ item.afbeelding }})"></div>				
-					<div class="row">
-						<div class="col-md-10 offset-md-1">
-							<div class="content">
-				      	<h2> {{ item.titel }} </h2>
-				        {{ item.content }}
-				        <div class="text-center" style="padding-top: 15px">
-				        	<a href="{{ item.btn_link }}" class="btn btn-primary"> {{ item.btn_label }} </a>
-				        </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				<div class="mod-cta {{ item.kleur }}">
+					{% if item.afbeelding_links_van_content %}
+						<div class="pl-5 pr-5">
+							<div class="row">
+								<div class="col-md-4 d-flex align-items-center">
+									<div class="img-rounded bg-cover ratio-1x1 mb-4 mb-md-0 w-100" style="background-image: url({{ Image(item.afbeelding).src }})">
+									</div>
+								</div>
+								<div class="col-md-8 d-flex align-items-center">
+									<div class="content w-100 text-left p-md-4">
+										<h2 class="mb-3"> {{ item.titel }} </h2>
+										{{ item.content }}
+										<div class="" style="padding-top: 15px">
+											<a href="{{ item.btn_link }}" class="btn btn-primary"> {{ item.btn_label }} </a>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
+					{% else %}
+						<div class="bg" style="background-image: url({{ item.afbeelding }})"></div>
+						<div class="row">
+							<div class="col-md-10 offset-md-1">
+								<div class="content">
+									<h2> {{ item.titel }} </h2>
+									{{ item.content }}
+									<div class="text-center" style="padding-top: 15px">
+										<a href="{{ item.btn_link }}" class="btn btn-primary"> {{ item.btn_label }} </a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}
 				</div>
-      </div>
-    </div>
-  </div>     
+			</div>
+		</div>
+	</div>
 </section>

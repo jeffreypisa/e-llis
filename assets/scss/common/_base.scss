@@ -12,6 +12,31 @@ input:focus,
   outline: none;
 }
 
+.text-blue {
+  color: $darkblue;
+}
+.text-grey {
+  color: $grey;
+}
+.text-white {
+  color: #fff;
+  h3 {
+    color: #fff;
+  }
+}
+.bg-cover {
+  background-size: cover;
+  background-position: center center;
+}
+
+.ratio-1x1 {
+  padding-top: 100%;
+}
+
+.img-rounded {
+  border-radius: 9999px;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: "PT Sans Caption";
   color: $darkblue;

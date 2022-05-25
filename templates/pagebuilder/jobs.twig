@@ -1,0 +1,77 @@
+<section class="mod-jobs bg-white">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1">
+				
+				<h2> {{ item.titel }} </h2>
+				{% if categories %}
+					<div id="pills" class="tabs">
+						<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		
+							<li class="nav-item" role="presentation">
+								<button class="btn-link active" id="pills-0-tab" data-bs-toggle="pill" data-bs-target="#pills-0" type="button" role="tab" aria-controls="pills-0" aria-selected="true">Alle</button>
+							</li>
+		
+		
+							{% for item in categories %}
+		
+							<li class="nav-item" role="presentation">
+		
+								<button class="btn-link h6" id="pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ loop.index }}" type="button" role="tab" aria-controls="pills-{{ loop.index }}" aria-selected="true">{{ item.title }}</button>
+		
+							</li>
+							{% endfor %}
+						</ul>
+					</div>
+		
+					<div class="tab-content" id="pills-tabContent">
+			
+						<div class="tab-pane fade show active" id="pills-0" role="tabpanel" aria-labelledby="pills-0-tab">
+							{% for item in jobs %}
+								<a href="{{ item.link }}" class="job mb-4">
+									<div class="row">
+										<div class="col-md">
+											<h4 class="mb-1">{{ item.title }}</h4>
+											<span class="text-grey">{{ item.locatie }}</span>
+										</div>
+										<div class="col-md-auto">
+											<div class="btn btn-primary">
+												INFO/APPLY
+											</div>
+										</div>
+									</div>
+								</a>
+							{% endfor %}
+			
+						</div>
+			
+						{% for item in categories %}
+			
+			
+							<div class="tab-pane fade" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
+								{% for item in item.posts %}
+								
+									<a href="{{ item.link }}" class="job mb-4">
+										<div class="row">
+											<div class="col-md">
+												<h4 class="mb-1">{{ item.title }}</h4>
+												<span class="text-grey">{{ item.locatie }}</span>
+											</div>
+											<div class="col-md-auto">
+												<div class="btn btn-primary">
+													INFO/APPLY
+												</div>
+											</div>
+										</div>
+									</a>
+								{% endfor %}
+				
+							</div>
+			
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

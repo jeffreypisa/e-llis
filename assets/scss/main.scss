@@ -14,6 +14,8 @@ Text Domain: myproject
 @import '../../bower_components/slick-carousel/slick/slick.scss';
 
 @import '../fonts/fonts';
+@import '../fonts/brands';
+@import '../fonts/fontawesome';
 
 @import 'common/base';
 @import 'common/single';
@@ -36,3 +38,5 @@ Text Domain: myproject
 @import 'modules/cta';
 @import 'modules/quote';
 @import 'modules/businessunits';
+@import 'modules/medewerkers';
+@import 'modules/jobs';

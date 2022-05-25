@@ -2,7 +2,6 @@
 	background-size: cover;
 	padding: 60px 0;
 	background-position: center center;
-	color: #fff;
 	text-align: center;
 	position: relative;
 	&:after {
@@ -14,6 +13,12 @@
 		bottom: 0;
 		background: rgba(0,0,0,.5);
 		z-index: -1;
+	}
+	&:not(.lightergrey) {
+		color: #fff;
+		h2, p {
+			color: #fff;
+		}
 	}
 	&.lime:after {
 		background: rgba($lime,.7);
@@ -27,6 +32,9 @@
 	&.darkblue:after {
 		background: rgba($darkblue,.5);
 	}
+	&.lightergrey:after {
+		background: $lightergrey;
+	}
 	.bg {
 		position: absolute;
 		left: 0; right: 0;
@@ -34,9 +42,6 @@
 		z-index: -2;
 		background-size: cover;
 		background-position: center center;
-	}
-	h2, p {
-		color: #fff;
 	}
 	.content {
 		z-index: 2;

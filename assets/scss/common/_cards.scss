@@ -13,6 +13,57 @@
   }
 }
 
+.card.card-border {
+  border: 1px solid rgba(230,233,236, 1);
+  opacity: 1;
+  box-shadow: none;
+  i {
+    color: $darkblue;
+  }
+  a.social {
+    &:after {
+      display: none;
+    }
+    &:hover {
+      i {
+        color: $orange;
+      }
+    }
+  }
+}
+
+.card {
+  &.bg-lightergrey {
+    background: $lightergrey
+  }
+  &.mopadding {
+    .card-body {
+      padding: 20px;
+    } 
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .card {
+    &.mopadding {
+      font-weight: 400;
+      .card-body {
+        padding: 40px;
+      } 
+    }
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .card {
+    &.mopadding {
+      .card-body {
+        padding: 60px;
+      } 
+    }
+  }
+}
+
 .card.infobox {
   font-size: 14px;
   line-height: 20px;

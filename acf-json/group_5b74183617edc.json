@@ -606,6 +606,25 @@
                             "mime_types": ""
                         },
                         {
+                            "key": "field_628d20e178a28",
+                            "label": "Afbeelding links van content",
+                            "name": "afbeelding_links_van_content",
+                            "type": "true_false",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "message": "",
+                            "default_value": 0,
+                            "ui": 0,
+                            "ui_on_text": "",
+                            "ui_off_text": ""
+                        },
+                        {
                             "key": "field_5bf6ea48e3035",
                             "label": "Kleur",
                             "name": "kleur",
@@ -623,11 +642,10 @@
                                 "lime": "lime",
                                 "iceblue": "iceblue",
                                 "gray": "gray",
+                                "lightergrey": "lightergrey",
                                 "darkblue": "darkblue"
                             },
-                            "default_value": [
-                                "donkerder"
-                            ],
+                            "default_value": "donkerder",
                             "allow_null": 0,
                             "multiple": 0,
                             "ui": 0,
@@ -892,6 +910,147 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_628d0cfa48994": {
+                    "key": "layout_628d0cfa48994",
+                    "name": "medewerkers",
+                    "label": "Medewerkers",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_628d0cfa48995",
+                            "label": "Titel",
+                            "name": "titel",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_628d0cfa48996",
+                            "label": "Medewerkers",
+                            "name": "medewerkers",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_628d0d1c48997",
+                                    "label": "Afbeelding",
+                                    "name": "afbeelding",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_628d0d2648998",
+                                    "label": "Titel",
+                                    "name": "titel",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_628d0d2948999",
+                                    "label": "Tekst",
+                                    "name": "tekst",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_628d1a71b3dfa": {
+                    "key": "layout_628d1a71b3dfa",
+                    "name": "jobs",
+                    "label": "Jobs",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_628d1a71b3dfb",
+                            "label": "Titel",
+                            "name": "titel",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Nieuw blok",
@@ -923,7 +1082,8 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1589550726
+    "show_in_rest": 0,
+    "modified": 1653416604
 }
