@@ -529,9 +529,9 @@
         },
         {
             "key": "field_628debfabf6b2",
-            "label": "Cta | Link",
-            "name": "jobs_cta_link",
-            "type": "link",
+            "label": "Apply for this job e-mail",
+            "name": "apply_for_this_job_email",
+            "type": "email",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -540,7 +540,10 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "array"
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -561,5 +564,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653468167
+    "modified": 1653470269
 }

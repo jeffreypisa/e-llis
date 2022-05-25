@@ -24,7 +24,7 @@ function create_jobs_tax() {
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite' 					=> array('slug' => 'jobs', 'with_front' => false )
+		// 'rewrite' 					=> array('slug' => 'jobs', 'with_front' => false )
 	);
 
   register_taxonomy('jobs_category', array('jobs'), $args);
