@@ -12520,7 +12520,7 @@ body.opensidemenu .mod-mobilemenu {
         content: '';
         width: 100%;
         position: absolute;
-        bottom: -4px;
+        bottom: -2px;
         left: 0;
         right: 0;
         height: 2px;
