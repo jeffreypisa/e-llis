@@ -12514,14 +12514,17 @@ body.opensidemenu .mod-mobilemenu {
       text-decoration: none; }
       .mod-jobs .tabs .btn-link:hover:after {
         width: 100%; }
-    .mod-jobs .tabs .btn-link.active:after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: #00BDE6; }
+    .mod-jobs .tabs .btn-link.active {
+      color: #00BDE6; }
+      .mod-jobs .tabs .btn-link.active:after {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #00BDE6; }
 
 .mod-jobs .job {
   display: block;

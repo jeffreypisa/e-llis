@@ -36,8 +36,10 @@
 			  }
 			}
 			&.active {
+				color: $blue;
 				&:after {
 					content: '';
+					width: 100%;
 					position: absolute;
 					bottom: -4px;
 					left: 0;
