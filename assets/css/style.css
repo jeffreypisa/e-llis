@@ -12494,10 +12494,26 @@ body.opensidemenu .mod-mobilemenu {
     font-style: normal;
     line-height: 28px;
     margin: 0 25px 10px 0;
+    position: relative;
     position: relative; }
     .mod-jobs .tabs .btn-link:hover, .mod-jobs .tabs .btn-link:focus {
       cursor: pointer;
       text-decoration: none; }
+    .mod-jobs .tabs .btn-link:after {
+      position: absolute;
+      bottom: -2px;
+      height: 2px;
+      left: 0;
+      width: 0px;
+      content: '';
+      background: #00BDE6;
+      content: 0;
+      transition: 0.3s ease-out; }
+    .mod-jobs .tabs .btn-link:hover {
+      color: #00BDE6;
+      text-decoration: none; }
+      .mod-jobs .tabs .btn-link:hover:after {
+        width: 100%; }
     .mod-jobs .tabs .btn-link.active:after {
       content: '';
       position: absolute;

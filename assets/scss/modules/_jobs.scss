@@ -16,6 +16,25 @@
 				cursor: pointer;
 				text-decoration: none;
 			}
+			position: relative;
+			&:after {
+			  position: absolute;
+			  bottom: -2px;
+			  height: 2px;
+			  left: 0;
+			  width: 0px;
+			  content: '';
+			  background: $blue;
+			  content: 0;
+			  transition: 0.3s ease-out;
+			}
+			&:hover {
+			  color: $blue;
+			  text-decoration: none;
+			  &:after {
+				  width: 100%;
+			  }
+			}
 			&.active {
 				&:after {
 					content: '';
